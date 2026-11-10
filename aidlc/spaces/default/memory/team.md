@@ -48,3 +48,5 @@
 ## Corrections
 
 <!-- Self-learning loop appends here. -->
+- ALWAYS verificar tarifas, costos y datos de proveedores externos (p. ej. pasarelas de pago) con fuentes oficiales vigentes en la etapa de diseño, en lugar de darlos por supuestos (learned 2026-11-09) <!-- cid:261106-multi-tenant-store:intent-capture:bf9ce3f79339019edbd4f5ccab95cbb49906814d3ffa80950695b5a39e8a4853 -->
+- ALWAYS el acceso de soporte a datos de una tienda o cliente debe ser de solo lectura y quedar registrado en auditoría (learned 2026-11-09) <!-- cid:261106-multi-tenant-store:intent-capture:293ae9f524d4cf18fe7b5a6f394b1eab68dafe3b8163563353c9cbfcfee858da -->
