@@ -56,11 +56,31 @@
 <!-- Format: NEVER [behavior] (affirmed [date]) -->
 <!-- Example: NEVER throw exceptions across service layer boundaries (affirmed 2026-05-17) -->
 
+- NEVER ejecutar `terraform apply` o `terraform destroy` desde el agente (solo `terraform fmt` y `terraform validate`; el owner ejecuta `apply`). (affirmed 2026-11-11)
+
+- NEVER guardar credenciales, llaves ni secretos en el repositorio (usar AWS Secrets Manager o SSM Parameter Store). (affirmed 2026-11-11)
+
+- NEVER procesar, registrar ni persistir datos de tarjeta (PAN/CVV) en nuestros sistemas ni en logs (se mantiene el alcance PCI reducido mediante checkout alojado/tokenización). (affirmed 2026-11-11)
+
+- NEVER registrar PII ni tokens en los logs. (affirmed 2026-11-11)
+
 ## Mandated
 
 <!-- Populated by practices-discovery affirmation gate. -->
 <!-- Format: ALWAYS [behavior] (affirmed [date]) -->
 <!-- Example: ALWAYS use Result<T,E> for fallible operations in service layer (affirmed 2026-05-17) -->
+
+- ALWAYS aplicar mínimo privilegio en IAM y mantener trazabilidad (auditoría) de las operaciones sensibles. (affirmed 2026-11-11)
+
+- ALWAYS detenerse ante cambios en autenticación, aislamiento multi-tenant, pagos e IAM, ante fallos, y antes de cualquier `terraform apply`. (affirmed 2026-11-11)
+
+- ALWAYS verificar la firma (HMAC) de todo webhook de pago entrante y garantizar su idempotencia (un único efecto sobre la orden ante entregas duplicadas, tardías o fuera de orden). (affirmed 2026-11-11)
+
+- ALWAYS escanear secretos antes del commit (hook de pre-commit) y en CI, como red de seguridad automatizada de la prohibición de secretos en el repo. (affirmed 2026-11-11)
+
+- ALWAYS escanear dependencias e infraestructura como código (Terraform) en CI. (affirmed 2026-11-11)
+
+- ALWAYS cifrar los datos en tránsito (TLS 1.2+) y en reposo (KMS/AES-256) para todo dato de cliente y comprobante de pago. (affirmed 2026-11-11)
 
 ## Corrections
 
